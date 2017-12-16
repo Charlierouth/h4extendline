@@ -60,6 +60,65 @@ news_event = {
 		ai_chance = { factor = 100 }
 	}
 }
+
+id=ww1_portugal.101
+	title = ww1_portugal.101.t
+	desc = ww1_portugal.101.d
+
+	picture=EVENT_hoi4tgw_portugal_republic
+	
+	major = yes
+	
+	trigger = {
+		date > 1932.7.5
+		NOT = { has_global_flag = kis_portugal_revolution }
+	}
+	
+	mean_time_to_happen = {
+		days = 0
+	}
+	immediate = {
+		set_global_flag = kis_portugal_revolution
+		hidden_effect = {
+			POR={
+				set_politics={
+					parties = {
+				        democratic = {
+				            popularity = 0
+				        }
+				        fascism = {
+				            popularity = 95
+				        }
+				        communism = {
+				            popularity = 0
+				        }
+				        neutrality = {
+				            popularity = 5
+				        }
+				    }
+					ruling_party = fascism
+					elections_allowed = no
+					last_election = "1930.1.21"
+				}
+				retire_country_leader = yes
+				create_country_leader = {
+					name = "António Salazar"
+					desc = POR_António_Salazar_DESC
+					picture = "gfx/leaders/POR_teofilo_braga.dds"
+					expire = "1970.1.1"
+					ideology = fascism_ideology
+					traits = {}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = ww1_portugal.101.a
+		ai_chance = { factor = 100 }
+	}
+}
+
 #____________________________________________________________
 
 
